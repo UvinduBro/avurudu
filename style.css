@@ -28,6 +28,10 @@ body {
   align-items: center;
 }
 
+@media only screen and (max-width: 767px) {
+  .wrapper {
+  width: 330px; }}
+
 header,
 .content :where(i, p, span) {
   color: #202842;
