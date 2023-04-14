@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avurudu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@5.0.0/dist/fancybox.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@5.0.0/dist/fancybox.umd.js"></script>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="content">
-            <div class="container">
-                <img src="./images/fire-cracks.png" alt="fire-cracks">
-                <img src="./images/koel.png" alt="koel">
-              </div>
+      <div class="content">
+        <div class="container">
+          <img
+            id="firecracks-sound"
+            data-fancybox="gallery"
+            src="./images/fire-cracks.png"
+            alt="fire-cracks"
+          />
+          <img
+            id="koel-img"
+            data-fancybox="gallery"
+            src="./images/koel.png"
+            alt="koel"
+          />
         </div>
+      </div>
     </div>
-</div>
-</body>
+
+    <audio id="fire-cracks" src="audio/firecracks-sound.wav"></audio>
+    <audio id="koel" src="audio/koel.mp3"></audio>
+
+    <script>
+      document
+        .getElementById("firecracks-sound")
+        .addEventListener("click", function () {
+          document.getElementById("fire-cracks").play();
+        });
+
+      document
+        .getElementById("koel-img")
+        .addEventListener("click", function () {
+          document.getElementById("koel").play();
+        });
+
+      // Update Fancybox options
+      fancybox.defaults.animationEffect = "zoom";
+      fancybox.defaults.animationDuration = 500;
+    </script>
+  </body>
 </html>
